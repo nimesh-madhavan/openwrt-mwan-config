@@ -1,6 +1,6 @@
-# OpenWrt mutli-wan configuration
+# OpenWrt dual-wan configuration
 
-An example of an OpenWrt multi wan working configuration on a TP-Link Archer C7 v2 router
+An example of an OpenWrt dual wan working configuration on a TP-Link Archer C7 v2 router
 
 ## Architecture
 
@@ -8,13 +8,13 @@ An example of an OpenWrt multi wan working configuration on a TP-Link Archer C7 
 
 ## mwan3
 
-mwan3 is an OpenWrt module providing load balancing, fail over, easy configuration of all your WANs : https://wiki.openwrt.org/doc/howto/mwan3
+mwan3 is an OpenWrt module providing load balancing, fail over, easy configuration of all your WANs : https://openwrt.org/docs/guide-user/network/wan/multiwan/mwan3
 
 ## Installation
 
-* make sure your router is present in OpenWrt table of hardware : https://wiki.openwrt.org/toh/start
+* make sure your router is present in OpenWrt table of hardware : https://openwrt.org/toh/start
 
-* install OpenWrt on your router following guide (for TP-Link Archer C7 : https://wiki.openwrt.org/toh/tp-link/tl-wdr7500)
+* install OpenWrt on your router following guide (for TP-Link Archer C7 : https://openwrt.org/toh/tp-link/archer-c5-c7-wdr7500)
 
 * access OpenWrt configuration interface via 192.168.1.1 on local network or serial connection if you can. Serial connection is useful if you mess up with your default local network config and cant access anymore OpenWrt interface. I followed Dave Boechler experiment to get it working : http://vtechdesign.com/archerc7mod.html (see Annex section)
 
@@ -41,7 +41,7 @@ In Network->Interfaces create your WAN interfaces :
 * choose `DHCP Client` protocol in General Setup 
 * in VLAN settings choose your previously created VLAN that match this WAN
 * in firewall settings select your WAN interface
-* in Advanced settings, choose a different metric for all your WAN beginning with 10 for WAN, 20 for WAN2, 30 for WAN3 etc... (check https://wiki.openwrt.org/doc/howto/mwan3)
+* in Advanced settings, choose a different metric for all your WAN beginning with 10 for WAN, 20 for WAN2, 30 for WAN3 etc... (check https://openwrt.org/docs/guide-user/network/wan/multiwan/mwan3)
 
 ![interfaces](img/interfaces.png)
 
@@ -157,7 +157,7 @@ The same metric is used for both `wan` & `wan2` but they have different weight w
 
 ### common error : `Interface wanX is offline`
 
-* if you have followed everything above, check https://wiki.openwrt.org/doc/howto/mwan3 to be sure nothing is left behind
+* if you have followed everything above, check https://openwrt.org/docs/guide-user/network/wan/multiwan/mwan3 to be sure nothing is left behind
 
 * edit your `list track_ip` lines in your mwan3 config to give network DNS IP to be tracked instead. This DNS IP can be retrieved using following command when you plug your WAN to your personal computer : 
 
