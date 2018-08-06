@@ -1,6 +1,6 @@
 # OpenWrt dual-wan configuration
 
-An example of an OpenWrt dual wan working configuration on a TP-Link Archer C7 v2 router
+An example of a dual wan working configuration on a TP-Link Archer C7 v2 router with OpenWrt 18.06 
 
 ## Architecture
 
