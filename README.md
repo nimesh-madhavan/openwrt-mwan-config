@@ -30,7 +30,11 @@ In Network->Switch edit your switch configuration :
 * add one VLAN per WAN you want to configure
 * leave the CPU `tagged` and untag your WAN port for each WAN  
 
-In my case, below, I have WAN on port 1 in VLAN2 (default), WAN2 on port 5 in VLAN3, WAN3 on port 4 in VLAN4
+In my case, below, I have wan2 on LAN port 4:
+
+![switch](img/vlan.png)
+
+A multiwan setting on an older machine could look like this: WAN on port 1 in VLAN2 (default), WAN2 on port 5 in VLAN3, WAN3 on port 4 in VLAN4
 
 ![switch](img/switch.png)
 
